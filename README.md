@@ -51,6 +51,11 @@ The estimated time to complete this assignment is 6-7 hours, but it may vary bas
 3. follow the instructions carefully, as we will evaluate your code, documentation, and adherence to best practices. Once you have finished, please send us the GitHub repository link.
 4. If you have any questions or need further clarification, please don't hesitate to reach out to us at hr@enverx.com. We look forward to reviewing your work and discussing it with you in the next stage of the interview process.
 
+
+### How to use software
+1. clone the project and run npm i
+
+
 ### developer  details
 1. Name: Ritik Panday
 2. Resume: https://drive.google.com/file/d/1SL3-Gd2RLOYtd7p_wrp4j4O_a9bcyGif/view?usp=sharing

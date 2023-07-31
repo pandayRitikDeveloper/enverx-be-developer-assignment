@@ -5,6 +5,8 @@ module.exports.getAllBlog = async function (req, res) {
     console.log("get block called")
         try {
           const result = await Model.find().sort({ title: 1 }); 
+          if(!result)
+          res.status(404).json({ message: "document Not found" });
           res.json(result);
         } catch (error) {
           res.status(500).json({ message: error.message });
@@ -31,16 +33,24 @@ module.exports.createBlog = async function (req, res, next) {
 module.exports.seachBlogById = async function (req, res, next) {
     try {
         const data = await Model.findById(req.params.id);
+     
+        if (!data) {
+    
+          return res.status(404).json({ message: "Document not found" });
+        }
         res.json(data);
       } catch (error) {
         res.status(500).json({ message: error.message });
       }
+      
 };
 //delete a blog by Id 
 module.exports.deleteBlogById = async function (req, res, next) {
     try {
         const id = req.params.id;
         const data = await Model.findByIdAndDelete(id);
+        if(!data)
+        res.status(404).json({ message: "document Not found" });
         res.send(`${data.title} blog has been deleted..`);
       } catch (error) {
         res.status(500).json({ message: error.message });
